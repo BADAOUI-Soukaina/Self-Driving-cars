@@ -1,0 +1,1475 @@
+#VRML_SIM R2025a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/traffic/protos/TrafficCone.proto"
+
+WorldInfo {
+  info [
+    "The highway driving benchmark aims at programing an autonomous Lincoln MKZ in Python. "
+    "The goal is to drive the farther as possible in one minute without colliding any other vehicles or static objects. "
+    "All the sensors and actuators of the robot can be used to achieve the best performance. "
+  ]
+  title "Highway Driving"
+  window "highway_driving"
+  ERP 0.6
+  basicTimeStep 10
+  lineScale 1
+  contactProperties [
+    ContactProperties {
+      coulombFriction [
+        8
+      ]
+      softCFM 1e-05
+      bumpSound ""
+      rollSound ""
+      slideSound ""
+    }
+    ContactProperties {
+      material2 "CitroenCZeroWheels"
+      coulombFriction [
+        8
+      ]
+      softCFM 1e-05
+      bumpSound ""
+      rollSound ""
+      slideSound ""
+    }
+    ContactProperties {
+      material2 "ToyotaPriusWheels"
+      coulombFriction [
+        8
+      ]
+      softCFM 1e-05
+      bumpSound ""
+      rollSound ""
+      slideSound ""
+    }
+    ContactProperties {
+      material2 "LincolnMKZWheels"
+      coulombFriction [
+        8
+      ]
+      softCFM 1e-05
+      bumpSound ""
+      rollSound ""
+      slideSound ""
+    }
+    ContactProperties {
+      material2 "RangeRoverSportSVRWheels"
+      coulombFriction [
+        8
+      ]
+      softCFM 1e-05
+      bumpSound ""
+      rollSound ""
+      slideSound ""
+    }
+    ContactProperties {
+      material2 "TruckWheels"
+      coulombFriction [
+        8
+      ]
+      softCFM 1e-05
+      bumpSound ""
+      rollSound ""
+      slideSound ""
+    }
+  ]
+}
+DEF VIEWPOINT Viewpoint {
+  orientation -0.111524203844337 0.15474046389659443 0.981640331684652 1.2666209960808725
+  position 48.14545156043161 1.410518048130072 21.02804043143432
+  near 1
+  follow "vehicle"
+  followSmoothness 0.01
+  ambientOcclusionRadius 7
+}
+TexturedBackground {
+  texture "noon_cloudy_countryside"
+}
+TexturedBackgroundLight {
+  texture "noon_cloudy_countryside"
+  castShadows FALSE
+}
+Fog {
+  color 0.606928 0.65417 0.716991
+  fogType "EXPONENTIAL2"
+  visibilityRange 1000
+}
+DEF ROAD Road {
+  rotation 0 0 1 1.5708
+  id "0"
+  width 15
+  numberOfForwardLanes 0
+  lines [
+    RoadLine {
+      color 1 0 0
+      type "continuous"
+    }
+  ]
+  roadBorderHeight 0
+  roadBorderWidth [
+    0
+  ]
+  rightBarrier TRUE
+  leftBarrier TRUE
+  bottom TRUE
+  wayPoints [
+    0 0 0
+    1050 0 0
+    1070 0 0
+    1150 20 0
+    1350 -50 0
+    1450 0 0
+    1500 0 0
+    1501 0 0
+    1502 0 0
+    1550 0 0
+    1600 41 0
+    1700 -41 0
+    2000 120 0
+    1750 250 0
+  ]
+  startingAngle [
+    0
+  ]
+  splineSubdivision 16
+  appearance Asphalt {
+    colorOverride 0.988235 1 0.294118
+  }
+  roadBoundingObject TRUE
+}
+WorkBarrier {
+  translation -5.8272 30.4072 -0.0297783
+  rotation -0.021213491077214975 -0.03674258454539227 0.9990995797603168 -1.8422953071795867
+}
+DEF WEBOTS_VEHICLE2 Solid {
+  translation -694.60547 -1.9070343 0.4
+  name "solid(1)"
+}
+HighwayPole {
+  translation 69.62 262.3 -0.2
+  rotation 0 0 1 -1.5707953071795862
+  stand 2
+  height 7
+  length 18
+  thickness 0.35
+  curveRadius 0.5
+  rightHorizontalSigns [
+    HighwaySign {
+      translation 0 -7.23 0
+      texture [
+        "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/traffic/protos/textures/highway_sign_bayonne.jpg"
+      ]
+    }
+  ]
+  rightVerticalSigns [
+    HighwaySign {
+      translation 0 0 0.66
+      name "highway sign(1)"
+      height 1.7
+      length 3.5
+      texture [
+        "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/traffic/protos/textures/highway_sign_sebastian.jpg"
+      ]
+    }
+  ]
+}
+HighwayPole {
+  translation 9.64 1200 0
+  rotation 0 0 1 -1.5707953071795862
+  name "highway pole(4)"
+  stand 2
+  height 7
+  length 18
+  thickness 0.35
+  curveRadius 0.5
+  rightHorizontalSigns [
+    HighwaySign {
+      translation 0 -7.23 0
+      texture [
+        "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/traffic/protos/textures/highway_sign_bayonne.jpg"
+      ]
+    }
+  ]
+  rightVerticalSigns [
+    HighwaySign {
+      translation 0 0 0.66
+      name "highway sign(1)"
+      height 1.7
+      length 3.5
+      texture [
+        "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/traffic/protos/textures/highway_sign_sebastian.jpg"
+      ]
+    }
+  ]
+}
+HighwayPole {
+  translation 69.66 620.58 0
+  rotation 0 0 1 -1.5707953071795862
+  name "highway pole(1)"
+  stand 2
+  height 7
+  length 18
+  thickness 0.35
+  curveRadius 0.5
+  rightHorizontalSigns [
+    HighwaySign {
+      translation 0 -7.23 0
+      texture [
+        "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/traffic/protos/textures/highway_sign_bayonne.jpg"
+      ]
+    }
+  ]
+  rightVerticalSigns [
+    HighwaySign {
+      translation 0 0 0.66
+      name "highway sign(1)"
+      height 1.7
+      length 3.5
+      texture [
+        "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/traffic/protos/textures/highway_sign_sebastian.jpg"
+      ]
+    }
+  ]
+}
+HighwayPole {
+  translation 69.57 992.73 0
+  rotation 0 0 1 -1.5707953071795862
+  name "highway pole(2)"
+  stand 2
+  height 7
+  length 18
+  thickness 0.35
+  curveRadius 0.5
+  rightHorizontalSigns [
+    HighwaySign {
+      translation 0 -7.23 0
+      texture [
+        "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/traffic/protos/textures/highway_sign_bayonne.jpg"
+      ]
+    }
+  ]
+  rightVerticalSigns [
+    HighwaySign {
+      translation 0 0 0.66
+      name "highway sign(1)"
+      height 1.7
+      length 3.5
+      texture [
+        "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/traffic/protos/textures/highway_sign_sebastian.jpg"
+      ]
+    }
+  ]
+}
+HighwayPole {
+  translation 69.0475 1416.13 0
+  rotation 0 0 1 -1.3089953071795861
+  name "highway pole(3)"
+  stand 2
+  height 7
+  length 18
+  thickness 0.35
+  curveRadius 0.5
+  rightHorizontalSigns [
+    HighwaySign {
+      translation 0 -7.23 0
+      texture [
+        "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/traffic/protos/textures/highway_sign_bayonne.jpg"
+      ]
+    }
+  ]
+  rightVerticalSigns [
+    HighwaySign {
+      translation 0 0 0.66
+      name "highway sign(1)"
+      height 1.7
+      length 3.5
+      texture [
+        "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/traffic/protos/textures/highway_sign_sebastian.jpg"
+      ]
+    }
+  ]
+}
+OilBarrel {
+  translation 4.59 130.18 0.44
+}
+StopSign {
+  translation 5.15756 141.514 1.68016e-07
+  rotation -9.58979e-09 -7.35851e-09 -1 1.8326
+}
+DEF SUMO_VEHICLE0 BusSimple {
+  translation 0 -10000 0.5
+  color 0.1 0.15 0.18
+  recognitionColors [
+    0.1 0.15 0.18
+  ]
+  name "vehicle(2)"
+}
+DEF SUMO_VEHICLE1 BmwX5Simple {
+  translation -10 -10000 0.5
+  color 0.72 0.52 0.18
+  recognitionColors [
+    0.72 0.52 0.18
+  ]
+  name "vehicle(3)"
+}
+DEF SUMO_VEHICLE2 BmwX5Simple {
+  translation -20 -10000 0.5
+  color 0.62 0.62 0.62
+  recognitionColors [
+    0.62 0.62 0.62
+  ]
+  name "vehicle(4)"
+}
+DEF SUMO_VEHICLE3 LincolnMKZSimple {
+  translation -30 -10000 0.5
+  color 0.43 0.11 0.1
+  recognitionColors [
+    0.43 0.11 0.1
+  ]
+  name "vehicle(5)"
+}
+DEF SUMO_VEHICLE4 BmwX5Simple {
+  translation -40 -10000 0.5
+  color 0.18 0.28 0.64
+  recognitionColors [
+    0.18 0.28 0.64
+  ]
+  name "vehicle(6)"
+}
+DEF SUMO_VEHICLE5 RangeRoverSportSVRSimple {
+  translation -50 -10000 0.5
+  color 0.18 0.5 0.72
+  recognitionColors [
+    0.18 0.5 0.72
+  ]
+  name "vehicle(7)"
+}
+DEF SUMO_VEHICLE6 TruckSimple {
+  translation -60 -10000 0.5
+  color 0.14 0.29 0.16
+  recognitionColors [
+    0.14 0.29 0.16
+  ]
+  name "vehicle(8)"
+}
+DEF SUMO_VEHICLE7 ScooterSimple {
+  translation -70 -10000 0.5
+  primaryColor 0.254902 0.0156863 0.105882
+  secondaryColor 0.309804 0.2 0.235294
+  recognitionColors [
+    0.254902 0.0156863 0.105882
+    0.309804 0.2 0.235294
+  ]
+  driver ScooterDriver {
+    shirtColor 0.396078 0.396078 0.686275
+    pantsColor 0.278431 0.278431 0.278431
+    skinColor 0.686275 0.588235 0.517647
+    helmetColor 0.470588 0.117647 0.117647
+  }
+  name "vehicle(9)"
+}
+DEF SUMO_VEHICLE8 BmwX5Simple {
+  translation -80 -10000 0.5
+  color 0.72 0.52 0.18
+  recognitionColors [
+    0.72 0.52 0.18
+  ]
+  name "vehicle(10)"
+}
+DEF SUMO_VEHICLE9 CitroenCZeroSimple {
+  translation -90 -10000 0.5
+  name "vehicle(11)"
+}
+DEF SUMO_VEHICLE10 LincolnMKZSimple {
+  translation -100 -10000 0.5
+  color 0.1 0.15 0.18
+  recognitionColors [
+    0.1 0.15 0.18
+  ]
+  name "vehicle(12)"
+}
+DEF SUMO_VEHICLE11 CitroenCZeroSimple {
+  translation -110 -10000 0.5
+  color 0.18 0.28 0.64
+  recognitionColors [
+    0.18 0.28 0.64
+  ]
+  name "vehicle(13)"
+}
+DEF SUMO_VEHICLE12 CitroenCZeroSimple {
+  translation -120 -10000 0.5
+  color 0.14 0.29 0.16
+  recognitionColors [
+    0.14 0.29 0.16
+  ]
+  name "vehicle(14)"
+}
+DEF SUMO_VEHICLE14 BmwX5Simple {
+  translation -140 -10000 0.5
+  color 0.62 0.62 0.62
+  recognitionColors [
+    0.62 0.62 0.62
+  ]
+  name "vehicle(16)"
+}
+DEF SUMO_VEHICLE15 RangeRoverSportSVRSimple {
+  translation -150 -10000 0.5
+  color 0.1 0.15 0.18
+  recognitionColors [
+    0.1 0.15 0.18
+  ]
+  name "vehicle(17)"
+}
+DEF SUMO_VEHICLE16 RangeRoverSportSVRSimple {
+  translation -160 -10000 0.5
+  color 0.18 0.5 0.72
+  recognitionColors [
+    0.18 0.5 0.72
+  ]
+  name "vehicle(18)"
+}
+DEF SUMO_VEHICLE17 RangeRoverSportSVRSimple {
+  translation -170 -10000 0.5
+  color 0.1 0.15 0.18
+  recognitionColors [
+    0.1 0.15 0.18
+  ]
+  name "vehicle(19)"
+}
+DEF SUMO_VEHICLE19 RangeRoverSportSVRSimple {
+  translation -190 -10000 0.5
+  color 0.1 0.15 0.18
+  recognitionColors [
+    0.1 0.15 0.18
+  ]
+  name "vehicle(21)"
+}
+DEF SUMO_VEHICLE20 TruckSimple {
+  translation -200 -10000 0.5
+  color 0.18 0.5 0.72
+  recognitionColors [
+    0.18 0.5 0.72
+  ]
+  trailer NULL
+  name "vehicle(22)"
+}
+DEF SUMO_VEHICLE22 CitroenCZeroSimple {
+  translation -220 -10000 0.5
+  name "vehicle(24)"
+}
+DEF SUMO_VEHICLE23 LincolnMKZSimple {
+  translation -230 -10000 0.5
+  color 0.1 0.15 0.18
+  recognitionColors [
+    0.1 0.15 0.18
+  ]
+  name "vehicle(25)"
+}
+DEF SUMO_VEHICLE24 CitroenCZeroSimple {
+  translation -240 -10000 0.5
+  color 0.18 0.28 0.64
+  recognitionColors [
+    0.18 0.28 0.64
+  ]
+  name "vehicle(26)"
+}
+TrafficCone {
+  translation 64.985 122.81 0.181742
+  rotation 0 1 0 2.24093e-06
+  scale 2
+  name "traffic cone(3)"
+}
+CautionSign {
+  translation 6.28229 43.6809 0
+  rotation 0 0 1 -2.094395307179586
+}
+PedestrianCrossing {
+  translation 59.75 231.49 -0.15
+}
+PedestrianCrossing {
+  translation 59.82 594.67 -0.15
+  name "pedestrian crossing(1)"
+}
+PedestrianCrossing {
+  translation 60.1821 1823.22 -0.16
+  rotation 0 0 1 -5.307179586466759e-06
+  name "pedestrian crossing(2)"
+  scale 1 0.8 1
+}
+PedestrianCrossing {
+  translation 0 2600 0
+  name "pedestrian crossing(3)"
+}
+YieldSign {
+  translation -6.94735 35.627 0
+  rotation 0 0 1 -2.094395307179586
+  radius 0.02
+}
+GenericTrafficLight {
+  translation 4.18632 60.0462 -1.2
+  rotation 2.19814e-07 -6.47091e-08 -1 1.5708
+  state "green"
+}
+GenericTrafficLight {
+  translation 69.3235 237.627 -0.40999
+  rotation 2.0177e-07 -3.16086e-08 -1 1.8326
+  name "generic traffic light(1)"
+  greenTime 40
+  state "green"
+}
+GenericTrafficLight {
+  translation 69.3791 606.189 -0.76999
+  rotation 1.87037e-07 -4.58217e-09 -1 2.0944
+  name "generic traffic light(2)"
+  state "green"
+}
+GenericTrafficLight {
+  translation 70.0303 858.941 -0.469987
+  rotation 1.87037e-07 -4.58217e-09 -1 2.0944
+  name "generic traffic light(3)"
+  state "green"
+}
+GenericTrafficLight {
+  translation 27.0904 1289.34 0.26001
+  rotation 1.87037e-07 -4.58217e-09 -1 2.0944
+  name "generic traffic light(4)"
+  state "green"
+}
+GenericTrafficLight {
+  translation 68.6034 1523.67 0.080023
+  rotation 1.87037e-07 -4.58217e-09 -1 2.0944
+  name "generic traffic light(5)"
+  state "green"
+}
+StopSign {
+  translation 4.42578 79.565 -0.13
+  rotation 0 0 -1 1.5708
+  name "stop sign(1)"
+}
+StopSign {
+  translation -6.23659 423.098 -0.68
+  rotation 0 0 1 -2.094395307179586
+  name "stop sign(2)"
+}
+StopSign {
+  translation 4.69 815.32 0
+  rotation 0 0 1 -2.094395307179586
+  name "stop sign(3)"
+}
+StopSign {
+  translation -2.295 1103.18 0
+  rotation 0 0 1 -2.094395307179586
+  name "stop sign(4)"
+}
+SpeedLimitSign {
+  translation 5.78308 167.664 -0.27
+  rotation 0 0 1 -2.3561953071795863
+  radius 0.06
+}
+Solid {
+  translation 69.0205 87.7357 0.899394
+  rotation 0.020823502683405645 0.027308903519142145 0.999410128788265 2.96732
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColorMap ImageTexture {
+          url [
+            "../textures/images (3).png"
+          ]
+        }
+      }
+      geometry Box {
+        size 1.5 0.01 1.5
+      }
+    }
+  ]
+}
+Solid {
+  translation 68.6626 168.517 1.1527
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColorMap ImageTexture {
+          url [
+            "../textures/stop.png"
+          ]
+        }
+      }
+      geometry Box {
+        size 2.5 0.01 2.5
+      }
+    }
+  ]
+  name "solid(9)"
+}
+Solid {
+  translation 68.8234 18.7041 0.764765
+  rotation 0.020823502683405645 0.02730890351914214 0.9994101287882649 2.96732
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColorMap ImageTexture {
+          url [
+            "../textures/images.jpg"
+          ]
+        }
+      }
+      geometry Box {
+        size 1.5 0.01 1.5
+      }
+    }
+  ]
+  name "solid(10)"
+}
+Solid {
+  translation -6.79505 659.261 0.594078
+  rotation 0.02082320281344967 0.027308903689741044 0.9994101350315867 2.96733
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColorMap ImageTexture {
+          url [
+            "../textures/speed60.jpg"
+          ]
+        }
+      }
+      geometry Box {
+        size 1.5 0.01 1.5
+      }
+    }
+  ]
+  name "solid(2)"
+}
+Solid {
+  translation -14.3525 1604.51 0.903504
+  rotation -0.023124793153593354 0.10337396939474328 -0.9943737056022641 -2.7030253071795864
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColorMap ImageTexture {
+          url [
+            "../textures/speed60.jpg"
+          ]
+        }
+      }
+      geometry Box {
+        size 1.5 0.01 1.5
+      }
+    }
+  ]
+  name "solid(3)"
+}
+Solid {
+  translation 69.7474 466.002 0.73765
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColorMap ImageTexture {
+          url [
+            "../textures/spped80.png"
+          ]
+        }
+      }
+      geometry Box {
+        size 1.5 0.01 1.5
+      }
+    }
+  ]
+  name "solid(4)"
+}
+Solid {
+  translation 69.744 359.88 0.753753
+  rotation 0 0 1 3.46682e-06
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColorMap ImageTexture {
+          url [
+            "../textures/images (2).png"
+          ]
+        }
+      }
+      geometry Box {
+        size 1.5 0.01 1.5
+      }
+    }
+  ]
+  name "solid(8)"
+}
+Solid {
+  translation 69.7066 520.192 1.02978
+  rotation 0.08482404176507437 0.027204713394868418 0.9960244904156422 0
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColorMap ImageTexture {
+          url [
+            "../textures/ppp.png"
+          ]
+        }
+      }
+      geometry Box {
+        size 2 0.01 2
+      }
+    }
+  ]
+  name "solid(6)"
+}
+Solid {
+  translation 69.6294 418.56 0.749781
+  rotation 0 0 1 3.46682e-06
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColorMap ImageTexture {
+          url [
+            "../textures/images (3).png"
+          ]
+        }
+      }
+      geometry Box {
+        size 1.5 0.01 1.5
+      }
+    }
+  ]
+  name "solid(7)"
+}
+FloorLight {
+  translation 5.16025 477.98 0.02537
+}
+Solid {
+  translation 5.5689 922.811 0.891546
+  rotation 0.009244707448780112 -0.10339197146738764 0.994597725525387 2.96339
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColorMap ImageTexture {
+          url [
+            "../textures/speed120.jpg"
+          ]
+        }
+      }
+      geometry Box {
+        size 1.5 0.01 1.5
+      }
+    }
+  ]
+  name "solid(5)"
+}
+DEF WEBOTS_VEHICLE0 Robot {
+  translation 64.40749963506474 103.02922734327201 0.6827070493482583
+  rotation 0.0034112340912397874 -0.0034094732718808166 0.9999883694193564 1.5724628336993722
+  children [
+    Camera {
+      translation 4 0 0.3
+      name "camera(1)"
+      locked TRUE
+      fieldOfView 1.0472
+      width 256
+      height 128
+    }
+    Pose {
+      translation 2.94 0.82 0
+      rotation 0 0 1 3.14159
+      children [
+        DEF LEFT_STEER_HINGE2 Hinge2Joint {
+          jointParameters HingeJointParameters {
+            position -1.416528992510189e-07
+            axis 0 0 -1
+            suspensionSpringConstant 100000
+            suspensionDampingConstant 4000
+            suspensionAxis 0 0 1
+          }
+          jointParameters2 JointParameters {
+            position 14444.359743354598
+            axis 0 -1 0
+            dampingConstant 2
+          }
+          device [
+            RotationalMotor {
+              name "left_steer"
+              minPosition -1
+              maxPosition 1
+              maxTorque 10000
+              sound ""
+            }
+            PositionSensor {
+              name "left_steer_sensor"
+            }
+          ]
+          device2 [
+            RotationalMotor {
+              name "left_front_wheel"
+              acceleration 15.611983508749582
+              maxVelocity 139.66480446927375
+              maxTorque 100000000
+              sound ""
+            }
+            PositionSensor {
+              name "left_front_sensor"
+            }
+            Brake {
+              name "left_front_brake"
+            }
+          ]
+          endPoint Slot {
+            type "vehicle wheel"
+            endPoint VehicleWheel {
+              name "front left wheel"
+              thickness 0.22
+              tireRadius 0.358
+              rimRadius 0.255
+              rimBeamWidth 0.07
+              centralInnerRadius 0.08
+              centralOuterRadius 0.12
+              rimBeamThickness 0.08
+              rimBeamOffset 0.065
+              contactMaterial "LincolnMKZWheels"
+              wheelSide TRUE
+            }
+          }
+        }
+      ]
+    }
+    Pose {
+      translation 2.94 -0.82 0
+      children [
+        DEF RIGHT_STEER_HINGE2 Hinge2Joint {
+          jointParameters HingeJointParameters {
+            position -1.0531960843661642e-07
+            axis 0 0 -1
+            suspensionSpringConstant 100000
+            suspensionDampingConstant 4000
+            suspensionAxis 0 0 1
+          }
+          jointParameters2 JointParameters {
+            position 14442.614679387396
+            axis 0 1 0
+            dampingConstant 2
+          }
+          device [
+            RotationalMotor {
+              name "right_steer"
+              minPosition -1
+              maxPosition 1
+              maxTorque 10000
+              sound ""
+            }
+            PositionSensor {
+              name "right_steer_sensor"
+            }
+          ]
+          device2 [
+            RotationalMotor {
+              name "right_front_wheel"
+              acceleration 15.611983508749582
+              maxVelocity 139.66480446927375
+              maxTorque 100000000
+              sound ""
+            }
+            PositionSensor {
+              name "right_front_sensor"
+            }
+            Brake {
+              name "right_front_brake"
+            }
+          ]
+          endPoint Slot {
+            type "vehicle wheel"
+            endPoint VehicleWheel {
+              name "front right wheel"
+              thickness 0.22
+              tireRadius 0.358
+              rimRadius 0.255
+              rimBeamWidth 0.07
+              centralInnerRadius 0.08
+              centralOuterRadius 0.12
+              rimBeamThickness 0.08
+              rimBeamOffset 0.065
+              contactMaterial "LincolnMKZWheels"
+            }
+          }
+        }
+      ]
+    }
+    Pose {
+      translation 0 0.82 0
+      rotation 0 0 1 3.14159
+      children [
+        DEF LEFT_REAR_WHEEL_HINGE HingeJoint {
+          jointParameters HingeJointParameters {
+            position 14439.34494707121
+            axis 0 -1 0
+            dampingConstant 2
+            suspensionSpringConstant 100000
+            suspensionDampingConstant 4000
+            suspensionAxis 0 0 1
+          }
+          device [
+            RotationalMotor {
+              name "left_rear_wheel"
+              acceleration 15.611983508749582
+              maxVelocity 139.66480446927375
+              maxTorque 100000000
+              sound ""
+            }
+            PositionSensor {
+              name "left_rear_sensor"
+            }
+            Brake {
+              name "left_rear_brake"
+            }
+          ]
+          endPoint Slot {
+            type "vehicle wheel"
+            endPoint VehicleWheel {
+              name "rear left wheel"
+              thickness 0.22
+              tireRadius 0.358
+              rimRadius 0.255
+              rimBeamWidth 0.07
+              centralInnerRadius 0.08
+              centralOuterRadius 0.12
+              rimBeamThickness 0.08
+              rimBeamOffset 0.065
+              contactMaterial "LincolnMKZWheels"
+              wheelSide TRUE
+            }
+          }
+        }
+      ]
+    }
+    Pose {
+      translation 0 -0.82 0
+      children [
+        DEF RIGHT_REAR_WHEEL_HINGE HingeJoint {
+          jointParameters HingeJointParameters {
+            position 14431.937741880676
+            axis 0 1 0
+            dampingConstant 2
+            suspensionSpringConstant 100000
+            suspensionDampingConstant 4000
+            suspensionAxis 0 0 1
+          }
+          device [
+            RotationalMotor {
+              name "right_rear_wheel"
+              acceleration 15.611983508749582
+              maxVelocity 139.66480446927375
+              maxTorque 100000000
+              sound ""
+            }
+            PositionSensor {
+              name "right_rear_sensor"
+            }
+            Brake {
+              name "right_rear_brake"
+            }
+          ]
+          endPoint Slot {
+            type "vehicle wheel"
+            endPoint VehicleWheel {
+              name "rear right wheel"
+              thickness 0.22
+              tireRadius 0.358
+              rimRadius 0.255
+              rimBeamWidth 0.07
+              centralInnerRadius 0.08
+              centralOuterRadius 0.12
+              rimBeamThickness 0.08
+              rimBeamOffset 0.065
+              contactMaterial "LincolnMKZWheels"
+            }
+          }
+        }
+      ]
+    }
+    Speaker {
+      translation 2.94 0 0
+      name "engine_speaker"
+    }
+    Group {
+      children [
+        Pose {
+          translation 3.944 0 0.142
+          children [
+            DEF FRONT DistanceSensor {
+              translation 0.05 0 0.3
+              name "distance sensor front"
+              lookupTable [
+                0 0 0
+                20 20 0
+              ]
+              numberOfRays 2
+              aperture 0.1
+            }
+            DEF FRONT_RIGHT_0 DistanceSensor {
+              translation 0.03 -0.68 0.3
+              rotation 0 0 -1 0.130899
+              name "distance sensor front right 0"
+              lookupTable [
+                0 0 0
+                20 20 0
+              ]
+              numberOfRays 2
+              aperture 0.1
+            }
+            DEF FRONT_RIGHT_1 DistanceSensor {
+              translation 0.05 -0.709 0.3
+              rotation 0 0 1 -0.261795307179586
+              name "distance sensor front right 1"
+              lookupTable [
+                0 0 0
+                15 15 0
+              ]
+              numberOfRays 2
+              aperture 0.1
+            }
+            DEF FRONT_RIGHT_2 DistanceSensor {
+              translation 0.03 -0.75 0.3
+              rotation 0 0 1 -0.39269530717958645
+              name "distance sensor front right 2"
+              lookupTable [
+                0 0 0
+                10 10 0
+              ]
+              numberOfRays 2
+              aperture 0.1
+            }
+            DEF FRONT_LEFT_0 DistanceSensor {
+              translation 0.04 0.685 0.3
+              rotation 0 0 1 0.130905
+              name "distance sensor front left 0"
+              lookupTable [
+                0 0 0
+                20 20 0
+              ]
+              numberOfRays 2
+              aperture 0.1
+            }
+            DEF FRONT_LEFT_1 DistanceSensor {
+              translation 0.02 0.72 0.3
+              rotation 0 0 -1 -0.2618053071795865
+              name "distance sensor front left 1"
+              lookupTable [
+                0 0 0
+                15 15 0
+              ]
+              numberOfRays 2
+              aperture 0.1
+            }
+            DEF FRONT_LEFT_2 DistanceSensor {
+              translation 0.03 0.757 0.3
+              rotation 0 0 1 0.392705
+              name "distance sensor front left 2"
+              lookupTable [
+                0 0 0
+                10 10 0
+              ]
+              numberOfRays 2
+              aperture 0.1
+            }
+          ]
+        }
+        Pose {
+          translation -1.06 0 0.33
+          rotation 0 0 1 3.14157
+          children [
+            DEF REAR DistanceSensor {
+              translation 0 0 0.3
+              name "distance sensor rear"
+              lookupTable [
+                0 0 0
+                10 10 0
+              ]
+              numberOfRays 2
+              aperture 0.2
+            }
+            DEF REAR_LEFT DistanceSensor {
+              translation 0.06 -0.775 0.3
+              rotation 0 0 -1 0.523599
+              name "distance sensor rear left"
+              lookupTable [
+                0 0 0
+                10 10 0
+              ]
+              numberOfRays 2
+              aperture 0.2
+            }
+            DEF REAR_RIGHT DistanceSensor {
+              translation 0.06 0.78 0.3
+              rotation 0 0 1 0.523599
+              name "distance sensor rear right"
+              lookupTable [
+                0 0 0
+                10 10 0
+              ]
+              numberOfRays 2
+              aperture 0.2
+            }
+          ]
+        }
+        Pose {
+          translation 1.11 0 1.16
+          children [
+            Pose {
+              translation 2 -2 -0.7
+              rotation 0 1 0 0
+              children [
+                Pose {
+                  rotation 1 0 0 0
+                  children [
+                    DEF TOP_CAMERA Camera {
+                      fieldOfView 1.4
+                      width 256
+                      height 128
+                      near 1
+                      far 350
+                      motionBlur 200
+                      recognition Recognition {
+                      }
+                      lensFlare LensFlare {
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+        Pose {
+          children [
+            SpotLight {
+              attenuation 0 0 1
+              beamWidth 0.2
+              cutOffAngle 0.7
+              direction 0 -0.6 -1
+              intensity 17
+              location 0 4 5.5
+              radius 20
+              castShadows TRUE
+            }
+            DEF RIGHT DistanceSensor {
+              translation 1.32 -1.19 0.3
+              rotation 0 0 1 -1.5707953071795862
+              name "distance sensor right"
+              lookupTable [
+                0 0 0
+                10 10 0
+              ]
+              numberOfRays 2
+              aperture 0.9
+            }
+            DEF LEFT DistanceSensor {
+              translation 1.32 0.95 0.3
+              rotation 0 0 -1 -1.5707953071795862
+              name "distance sensor left"
+              lookupTable [
+                0 0 0
+                10 10 0
+              ]
+              numberOfRays 2
+              aperture 0.9
+            }
+            GPS {
+              translation 5.03 0 0
+            }
+          ]
+        }
+        VehicleLights {
+          front [
+            Group {
+              children [
+                Pose {
+                  translation 1.44 0 -0.35
+                  rotation -0.5773489358556708 0.5773509358554485 0.5773509358554485 -2.094397
+                  children [
+                    DEF HEADLIGHT Shape {
+                      appearance PBRAppearance {
+                        roughness 0.1
+                        metalness 0
+                        emissiveIntensity 25
+                      }
+                      geometry LincolnMKZFrontLightsMesh {
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+          rightIndicator [
+            Pose {
+              translation 1.44 0 -0.35
+              rotation -0.5773489358556708 0.5773509358554485 0.5773509358554485 -2.094397
+              children [
+                DEF INDICATOR_RIGHT Shape {
+                  appearance PBRAppearance {
+                    baseColorMap ImageTexture {
+                      url [
+                        "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/vehicles/protos/lincoln/textures/lincoln_mkz_details_base_color.jpg"
+                      ]
+                    }
+                    roughnessMap ImageTexture {
+                      url [
+                        "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/vehicles/protos/lincoln/textures/lincoln_mkz_details_roughness.jpg"
+                      ]
+                    }
+                    metalnessMap ImageTexture {
+                      url [
+                        "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/vehicles/protos/lincoln/textures/lincoln_mkz_details_metalness.jpg"
+                      ]
+                    }
+                    normalMap ImageTexture {
+                      url [
+                        "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/vehicles/protos/lincoln/textures/lincoln_mkz_details_normal.jpg"
+                      ]
+                    }
+                    emissiveIntensity 30
+                  }
+                  geometry LincolnMKZRightTurnSignalMesh {
+                  }
+                }
+              ]
+            }
+          ]
+          leftIndicator [
+            Pose {
+              translation 1.44 0 -0.35
+              rotation -0.5773489358556708 0.5773509358554485 0.5773509358554485 -2.094397
+              children [
+                DEF INDICATOR_LEFT Shape {
+                  appearance PBRAppearance {
+                    baseColorMap ImageTexture {
+                      url [
+                        "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/vehicles/protos/lincoln/textures/lincoln_mkz_details_base_color.jpg"
+                      ]
+                    }
+                    roughnessMap ImageTexture {
+                      url [
+                        "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/vehicles/protos/lincoln/textures/lincoln_mkz_details_roughness.jpg"
+                      ]
+                    }
+                    metalnessMap ImageTexture {
+                      url [
+                        "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/vehicles/protos/lincoln/textures/lincoln_mkz_details_metalness.jpg"
+                      ]
+                    }
+                    normalMap ImageTexture {
+                      url [
+                        "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/vehicles/protos/lincoln/textures/lincoln_mkz_details_normal.jpg"
+                      ]
+                    }
+                    emissiveIntensity 30
+                  }
+                  geometry LincolnMKZLeftTurnSignalMesh {
+                  }
+                }
+              ]
+            }
+          ]
+          antifog [
+            Pose {
+              rotation 0.5773502691896258 0.5773502691896258 0.5773502691896258 2.094395
+              children [
+                DEF ANTIFOG_LIGHTS Shape {
+                  appearance PBRAppearance {
+                    baseColor 0.560784 0.113725 0.113725
+                    metalness 0
+                    emissiveIntensity 10
+                  }
+                  geometry LincolnMKZRearAntifogLightsMesh {
+                  }
+                }
+              ]
+            }
+          ]
+          antifogColor [
+            0.3 0 0
+          ]
+          braking [
+            Pose {
+              rotation 0.5773502691896258 0.5773502691896258 0.5773502691896258 2.094395
+              children [
+                DEF BRAKING_LIGHTS Shape {
+                  appearance PBRAppearance {
+                    baseColor 0.560784 0.113725 0.113725
+                    metalness 0
+                    emissiveColor 0.30000001192092896 0 0
+                    emissiveIntensity 30
+                  }
+                  geometry LincolnMKZBrakingLightsMesh {
+                  }
+                }
+              ]
+            }
+          ]
+          rear [
+            Pose {
+              rotation 0.5773502691896258 0.5773502691896258 0.5773502691896258 2.094395
+              children [
+                DEF TAIL_LIGHT Shape {
+                  appearance PBRAppearance {
+                    baseColor 0.560784 0.113725 0.113725
+                    metalness 0
+                    emissiveIntensity 10
+                  }
+                  geometry LincolnMKZTailLightsMesh {
+                  }
+                }
+              ]
+            }
+          ]
+        }
+        Pose {
+          rotation 0.5773502691896258 0.5773502691896258 0.5773502691896258 2.094395
+          children [
+            DEF COACHWORK Shape {
+              appearance DEF VEHICLE_APP GlossyPaint {
+                baseColor 0.541 0.541 0.541
+              }
+              geometry LincolnMKZCoachworkMesh {
+              }
+            }
+            DEF WINDOWS Shape {
+              appearance DEF WINDOWS_APP PBRAppearance {
+                baseColor 0.2 0.2 0.2
+                metalness 0
+              }
+              geometry LincolnMKZWindowsMesh {
+              }
+            }
+            DEF DETAILS Shape {
+              appearance DEF DETAILS_APP PBRAppearance {
+                baseColorMap ImageTexture {
+                  url [
+                    "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/vehicles/protos/lincoln/textures/lincoln_mkz_details_base_color.jpg"
+                  ]
+                }
+                roughnessMap ImageTexture {
+                  url [
+                    "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/vehicles/protos/lincoln/textures/lincoln_mkz_details_roughness.jpg"
+                  ]
+                }
+                metalnessMap ImageTexture {
+                  url [
+                    "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/vehicles/protos/lincoln/textures/lincoln_mkz_details_metalness.jpg"
+                  ]
+                }
+                normalMap ImageTexture {
+                  url [
+                    "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/vehicles/protos/lincoln/textures/lincoln_mkz_details_normal.jpg"
+                  ]
+                }
+              }
+              geometry LincolnMKZDetailsMesh {
+              }
+            }
+            DEF LEFT_SIDE_MIRROR Shape {
+              appearance DEF MIRROR_APP PBRAppearance {
+                roughness 1
+                metalness 0
+              }
+              geometry LincolnMKZLeftSideMirrorMesh {
+              }
+            }
+            DEF RIGHT_SIDE_MIRROR Shape {
+              appearance USE MIRROR_APP
+              geometry LincolnMKZRightSideMirrorMesh {
+              }
+            }
+            DEF PLATES Shape {
+              appearance PBRAppearance {
+                baseColorMap ImageTexture {
+                  url [
+                    "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/vehicles/protos/textures/plate.jpg"
+                  ]
+                }
+                roughness 0.4
+                metalness 0
+              }
+              geometry LincolnMKZPlatesMesh {
+              }
+            }
+            DEF REAR_LOGO Shape {
+              appearance PBRAppearance {
+                baseColorMap ImageTexture {
+                  url [
+                    "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/vehicles/protos/lincoln/textures/lincoln_mkz_logo_base_color.png"
+                  ]
+                }
+                normalMap ImageTexture {
+                  url [
+                    "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/vehicles/protos/lincoln/textures/lincoln_mkz_logo_normal.jpg"
+                  ]
+                }
+              }
+              geometry LincolnMKZBackLogoMesh {
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+  name "vehicle"
+  model "Lincoln MKZ"
+  boundingObject Group {
+    children [
+      DEF LOWER_BOX Pose {
+        translation 1.44 0 0.3
+        rotation 0.019998700119975305 0 0.9998000059979554 3.14159
+        children [
+          Box {
+            size 4.9 1.8 0.8
+          }
+        ]
+      }
+      DEF CENTRAL_BOX Pose {
+        translation 1.44 0 0.85
+        rotation 0 0 1 3.14159
+        children [
+          Box {
+            size 2 1.6 0.5
+          }
+        ]
+      }
+    ]
+  }
+  physics Physics {
+    density -1
+    mass 1950
+    centerOfMass [
+      1.6 0 0.2
+    ]
+  }
+  radarCrossSection 100
+  recognitionColors [
+    0.541 0.541 0.541
+  ]
+  controller "highway_driving_benchmark"
+  customData "2.94 1.64 1.64 0.358 0.358 1400 2 C 250 298000 1000 5500 150 0.1 0 0.25 3000 1000 7 17 -2.94 4.58 2.96 1.91 1.45 1 0.75 sounds/engine.wav "
+  selfCollision TRUE
+  linearVelocity 7.138369265518959e-07 -0.00043260320641828805 -1.6674229731241534
+  angularVelocity 0.014006728702908245 2.315731212241667e-05 6.999987685112658e-08
+}
+TrafficCone {
+  translation -3.33231 556.895 0.308253
+}
+StraightRoadSegment {
+  translation 60 0 0
+  rotation 0 0 1 1.5708
+  name "road(1)"
+  width 18
+  roadBorderHeight 0
+  startingRoadBorderWidth 6
+  rightBarrier TRUE
+  leftBarrier TRUE
+  bottom TRUE
+  length 5000
+  bottomTexture [
+    ""
+  ]
+  roadBoundingObject TRUE
+}
